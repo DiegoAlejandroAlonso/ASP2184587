@@ -11,7 +11,7 @@ namespace ASP2184587.Controllers
 {
     public class clienteController : Controller
     {
-        // GET: Usuario
+        // GET: 
         public ActionResult Index()
         {
             using (var db = new inventarioEntities1())
