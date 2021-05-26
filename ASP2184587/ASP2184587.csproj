@@ -179,7 +179,6 @@
     <Compile Include="Controllers\clienteController.cs" />
     <Compile Include="Controllers\comprasController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\productoController.cs" />
     <Compile Include="Controllers\producto_compraController.cs" />
     <Compile Include="Controllers\proveedorsController.cs" />
@@ -306,7 +305,7 @@
     <Content Include="Views\producto_compra\Edit.cshtml" />
     <Content Include="Views\producto_compra\Index.cshtml" />
     <Content Include="Views\producto_compra\listarProductoCompra.cshtml" />
-    <Content Include="Views\Login\Login.cshtml" />
+    <Content Include="Views\Usuario\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
