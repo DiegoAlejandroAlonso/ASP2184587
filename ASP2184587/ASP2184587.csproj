@@ -177,7 +177,11 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\clienteController.cs" />
+    <Compile Include="Controllers\comprasController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\productoController.cs" />
+    <Compile Include="Controllers\producto_compraController.cs" />
     <Compile Include="Controllers\proveedorsController.cs" />
     <Compile Include="Controllers\UsuarioController.cs" />
     <Compile Include="Global.asax.cs">
@@ -284,6 +288,25 @@
     <Content Include="Views\proveedors\Details.cshtml" />
     <Content Include="Views\proveedors\Edit.cshtml" />
     <Content Include="Views\proveedors\Index.cshtml" />
+    <Content Include="Views\producto\Create.cshtml" />
+    <Content Include="Views\producto\Delete.cshtml" />
+    <Content Include="Views\producto\Details.cshtml" />
+    <Content Include="Views\producto\Edit.cshtml" />
+    <Content Include="Views\producto\Index.cshtml" />
+    <Content Include="Views\producto\ListarProveedor.cshtml" />
+    <Content Include="Views\compras\Create.cshtml" />
+    <Content Include="Views\compras\Delete.cshtml" />
+    <Content Include="Views\compras\Details.cshtml" />
+    <Content Include="Views\compras\Edit.cshtml" />
+    <Content Include="Views\compras\Index.cshtml" />
+    <Content Include="Views\compras\ListarCompras.cshtml" />
+    <Content Include="Views\producto_compra\Create.cshtml" />
+    <Content Include="Views\producto_compra\Delete.cshtml" />
+    <Content Include="Views\producto_compra\Details.cshtml" />
+    <Content Include="Views\producto_compra\Edit.cshtml" />
+    <Content Include="Views\producto_compra\Index.cshtml" />
+    <Content Include="Views\producto_compra\listarProductoCompra.cshtml" />
+    <Content Include="Views\Login\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
