@@ -132,6 +132,21 @@ namespace ASP2184587.Controllers
       
         }
 
+        public ActionResult reporte()
+        {
+            var db = new inventarioEntities1();
+            var query = from tabProvedor in db.proveedor
+                        join tabProducto in db.producto on tabProvedor.id equals tabProducto.id_proveedor
+                        select new reporte
+                        {
+                            nombreProveedor = tabProvedor.nombre,
+                            telefonoProveedor = tabProvedor.telefono,
+                            direccionProveedor = tabProvedor.direccion,
+                            nombreProducto = tabProducto.nombre,
+                            precioProducto = tabProducto.percio_unitario
+                        };
+            return View(query);
+        }
 
     }
 

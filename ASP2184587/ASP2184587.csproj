@@ -216,6 +216,7 @@
     <Compile Include="Models\proveedor.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\reporte.cs" />
     <Compile Include="Models\usuario.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -309,6 +310,7 @@
     <Content Include="Views\Usuario\Login.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Usuario\Register.cshtml" />
+    <Content Include="Views\producto\reporte.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
