@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Web;
 using System.Web.Mvc;
@@ -176,6 +177,19 @@ namespace ASP2184587.Controllers
             FormsAuthentication.SignOut();
             return RedirectToAction("Index", "Home");
         }
+
+        public ActionResult Register()
+        {
+            return View();
+        }
+
+
+        public ActionResult LogOff()
+        {
+           
+            return RedirectToAction("Login", "Asuario");
+        }
+
 
     }
 }
