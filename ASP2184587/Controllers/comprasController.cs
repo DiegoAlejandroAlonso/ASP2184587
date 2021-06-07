@@ -42,6 +42,7 @@ namespace ASP2184587.Controllers
             ViewBag.id_cliente = new SelectList(db.cliente, "id", "nombre");
             ViewBag.id_usuario = new SelectList(db.usuario, "id", "nombre");
             return View();
+
         }
 
         // POST: compras/Create
@@ -51,12 +52,13 @@ namespace ASP2184587.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "id,fecha,total,id_usuario,id_cliente")] compra compra)
         {
-            if (ModelState.IsValid)
-            {
-                db.compra.Add(compra);
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
+                using (var db = new inventarioEntities1())
+                if (ModelState.IsValid)
+                {
+                     db.compra.Add(compra);
+                      db.SaveChanges();
+                      return RedirectToAction("Index");
+                 }
 
             ViewBag.id_cliente = new SelectList(db.cliente, "id", "nombre", compra.id_cliente);
             ViewBag.id_usuario = new SelectList(db.usuario, "id", "nombre", compra.id_usuario);

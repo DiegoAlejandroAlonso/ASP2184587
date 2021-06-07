@@ -1,39 +1,92 @@
 ﻿@model IEnumerable<ASP2184587.Models.cliente>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-          Nombre
-        </th>
-        <th>
-           Documento
-        </th>
-        <th>
-            Email
-        </th>
-        <th></th>
-    </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.nombre)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.documento)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.email)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.id })
-        </td>
-    </tr>
+<div class="row m-4">
+    <div class="col-sm-12">
+        <div class="card">
+            <div class="card-header">
+                Lista de Clientes
+            </div>
+            <div class="card-body">
+                <table class="display responsive nowrap" id="myTable" style="width:100%">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Documento</th>
+                            <th>Correo</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+
+
+
+
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.nombre)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.documento)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.email)
+                            </td>
+                            <td>
+                                @Html.ActionLink("Editar", "Edit", new { id = item.id }) |
+                                @Html.ActionLink("Detalle", "Details", new { id = item.id }) |
+                                @Html.ActionLink("Eliminar", "Delete", new { id = item.id })
+                            </td>
+                        </tr>
+                    }
+
+                </table>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+@section scripts{
+    <script>
+        $(".linkDelete").click(function (event) {
+            if (!confirm('¿ Esta seguro de eliminar ?')) {
+                event.preventDefault();
+            }
+        })
+    </script>
 }
 
-</table>
+<div class="row m-4">
+    <div class="col-sm-12">
+        <div class="card">
+            <div class="card-header">
+                <thead>
+                    <tr>
+                        <th>Crear Cliente</th>
+
+                    </tr>
+                </thead>
+            </div>
+            <div class="card-body">
+                <table class="display responsive nowrap" id="myTable" style="width:50%">
+                    <thead>
+                        <tr>
+
+                            <p>
+                                @Html.ActionLink("Crear Cliente", "Create")
+                            </p>
+                        </tr>
+                    </thead>
+
+                </table>
+            </div>
+        </div>
+
+    </div>
+
+
+</div>
+

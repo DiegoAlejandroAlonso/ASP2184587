@@ -1,45 +1,94 @@
 ﻿@model IEnumerable<ASP2184587.Models.usuario>
 
-@{
-    ViewBag.Title = "Index";
+@{ ViewBag.Title = "Index"; }
+
+
+
+
+<div class="row m-4">
+    <div class="col-sm-12">
+        <div class="card">
+            <div class="card-header">
+                Lista de Usuarios
+            </div>
+            <div class="card-body">
+                <table class="display responsive nowrap" id="myTable" style="width:100%">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Apellidos</th>
+                            <th>Correo</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+
+
+
+
+                    @foreach (var item in Model)
+                    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.apellido)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.email)
+            </td>
+            <td>
+                @Html.ActionLink("Editar", "Edit", new { id = item.id }) |
+                @Html.ActionLink("Detalle", "Details", new { id = item.id }) |
+                @Html.ActionLink("Eliminar", "Delete", new { id = item.id })
+            </td>
+        </tr>}
+
+                </table>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+@section scripts{
+    <script>
+        $(".linkDelete").click(function (event) {
+            if (!confirm('¿ Esta seguro de eliminar ?')) {
+                event.preventDefault();
+            }
+        })
+    </script>
 }
 
-<h2>Lista de Usuarios</h2>
+<div class="row m-4">
+    <div class="col-sm-12">
+        <div class="card">
+            <div class="card-header">
+                <thead>
+                    <tr>
+                        <th>Crear Usuario</th>
 
-<p>
-    @Html.ActionLink("Crear Usuario", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            Nombre Usuario
-        </th>
-        <th>
-            Apellido Usuario
-        </th>
-        <th>
-            Email Usuario
-        </th>
-        <th></th>
-    </tr>
+                    </tr>
+                </thead>
+            </div>
+            <div class="card-body">
+                <table class="display responsive nowrap" id="myTable" style="width:50%">
+                    <thead>
+                        <tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.nombre)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.apellido)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.email)
-        </td>
-        <td>
-            @Html.ActionLink("Editar", "Edit", new { id=item.id }) |
-            @Html.ActionLink("Detalle", "Details", new { id=item.id }) |
-            @Html.ActionLink("Eliminar", "Delete", new { id=item.id })
-        </td>
-    </tr>
-}
+                            <p>
+                                @Html.ActionLink("Crear Usuario", "Create")
+                            </p>
+                        </tr>
+                    </thead>
 
-</table>
+                </table>
+            </div>
+        </div>
+
+    </div>
+
+
+</div>  

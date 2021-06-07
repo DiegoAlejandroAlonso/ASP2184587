@@ -4,6 +4,9 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ASP-DIEGO ALONSO</title>
+    @Styles.Render("~/Content/css")
+    @Styles.Render("~/bundles/Plugins/css")
+    @Scripts.Render("~/bundles/modernizr")
 
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -30,15 +33,16 @@
             </div>
             <div class="list-group list-group-flush">
                 <li>@Html.ActionLink("Inicio", "Index", "Home", routeValues: null, htmlAttributes: new { @class = "list-group-item list-group-item-action bg-light" })</li>
-                <li>@Html.ActionLink("Acerca de", "About", "Home", routeValues: null, htmlAttributes: new { @class = "list-group-item list-group-item-action bg-light" })</li>
+
                 <li>@Html.ActionLink("Contacto", "Contact", "Home", routeValues: null, htmlAttributes: new { @class = "list-group-item list-group-item-action bg-light" })</li>
-                
+
                 @if (User.Identity.IsAuthenticated)
                 {
                     <li>@Html.ActionLink("Usuario", "Index", "Usuario", routeValues: null, htmlAttributes: new { @class = "list-group-item list-group-item-action bg-light" })</li>
                     <li>@Html.ActionLink("Cliente", "Index", "Cliente", routeValues: null, htmlAttributes: new { @class = "list-group-item list-group-item-action bg-light" })</li>
                     <li>@Html.ActionLink("Proveedor", "Index", "proveedors", routeValues: null, htmlAttributes: new { @class = "list-group-item list-group-item-action bg-light" })</li>
-                    <li>@Html.ActionLink("Cerrar Sesion", "CloseSession", "Usuario", routeValues: null, htmlAttributes: new { @class = "list-group-item list-group-item-action bg-light" })</li>}
+                    <li>@Html.ActionLink("Compras", "Index", "compras", routeValues: null, htmlAttributes: new { @class = "list-group-item list-group-item-action bg-light" })</li>}
+                <li>@Html.ActionLink("Cerrar Sesion", "CloseSession", "Usuario", routeValues: null, htmlAttributes: new { @class = "list-group-item list-group-item-action bg-light" })</li>}
             </div>
         </div>
         <!-- ============================================================== -->
@@ -77,6 +81,10 @@
     </script>
 
     @RenderSection("scripts", required: false)
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/Plugins/js")
+  
 </body>
 </html>
 

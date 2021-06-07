@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using ASP2184587.Models;
+using Rotativa;
 
 namespace ASP2184587.Controllers
 {
@@ -147,6 +148,12 @@ namespace ASP2184587.Controllers
                         };
             return View(query);
         }
+
+        public ActionResult ImprimirReporte()
+        {
+            return new ActionAsPdf("Reporte") { FileName = "Reporte.pdf" };
+        }
+
 
     }
 

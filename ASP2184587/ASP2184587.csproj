@@ -76,6 +76,9 @@
     <Reference Include="Renci.SshNet, Version=2016.1.0.0, Culture=neutral, PublicKeyToken=1cee9f8bde3db106, processorArchitecture=MSIL">
       <HintPath>..\packages\SSH.NET.2016.1.0\lib\net40\Renci.SshNet.dll</HintPath>
     </Reference>
+    <Reference Include="Rotativa, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Rotativa.1.7.3\lib\net461\Rotativa.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Buffers.4.5.0\lib\netstandard2.0\System.Buffers.dll</HintPath>
@@ -228,6 +231,36 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\datatable\css\dataTables.bootstrap.css" />
+    <Content Include="Content\datatable\css\dataTables.bootstrap.min.css" />
+    <Content Include="Content\datatable\css\dataTables.bootstrap4.css" />
+    <Content Include="Content\datatable\css\dataTables.bootstrap4.min.css" />
+    <Content Include="Content\datatable\css\dataTables.bootstrap5.css" />
+    <Content Include="Content\datatable\css\dataTables.bootstrap5.min.css" />
+    <Content Include="Content\datatable\css\dataTables.bulma.css" />
+    <Content Include="Content\datatable\css\dataTables.bulma.min.css" />
+    <Content Include="Content\datatable\css\dataTables.dataTables.css" />
+    <Content Include="Content\datatable\css\dataTables.dataTables.min.css" />
+    <Content Include="Content\datatable\css\dataTables.foundation.css" />
+    <Content Include="Content\datatable\css\dataTables.foundation.min.css" />
+    <Content Include="Content\datatable\css\dataTables.jqueryui.css" />
+    <Content Include="Content\datatable\css\dataTables.jqueryui.min.css" />
+    <Content Include="Content\datatable\css\dataTables.material.css" />
+    <Content Include="Content\datatable\css\dataTables.material.min.css" />
+    <Content Include="Content\datatable\css\dataTables.semanticui.css" />
+    <Content Include="Content\datatable\css\dataTables.semanticui.min.css" />
+    <Content Include="Content\datatable\css\dataTables.uikit.css" />
+    <Content Include="Content\datatable\css\dataTables.uikit.min.css" />
+    <Content Include="Content\datatable\css\jquery.dataTables.css" />
+    <Content Include="Content\datatable\css\jquery.dataTables.min.css" />
+    <Content Include="Content\datatable\css\jquery.dataTables_themeroller.css" />
+    <Content Include="Content\datatable\images\favicon.ico" />
+    <Content Include="Content\datatable\images\sort_asc.png" />
+    <Content Include="Content\datatable\images\sort_asc_disabled.png" />
+    <Content Include="Content\datatable\images\sort_both.png" />
+    <Content Include="Content\datatable\images\sort_desc.png" />
+    <Content Include="Content\datatable\images\sort_desc_disabled.png" />
+    <Content Include="Content\datatable\js\jquery.dataTables.min.js" />
     <Content Include="Content\Usuario.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -243,6 +276,10 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <Content Include="Rotativa\help-wkhtmltoimage.txt" />
+    <Content Include="Rotativa\help-wkhtmltopdf.txt" />
+    <Content Include="Rotativa\wkhtmltoimage.exe" />
+    <Content Include="Rotativa\wkhtmltopdf.exe" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <EntityDeploy Include="Models\Model1.edmx">
@@ -252,6 +289,8 @@
     <Content Include="Models\Model1.edmx.diagram">
       <DependentUpon>Model1.edmx</DependentUpon>
     </Content>
+    <Content Include="App_Browsers\qt.browser" />
+    <Content Include="Content\datatable\images\Sorting icons.psd" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -307,7 +346,6 @@
     <Content Include="Views\producto_compra\Details.cshtml" />
     <Content Include="Views\producto_compra\Edit.cshtml" />
     <Content Include="Views\producto_compra\Index.cshtml" />
-    <Content Include="Views\producto_compra\listarProductoCompra.cshtml" />
     <Content Include="Views\Usuario\Login.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Usuario\Register.cshtml" />
@@ -316,6 +354,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Content\datatable\idioma\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

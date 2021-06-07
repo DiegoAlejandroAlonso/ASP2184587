@@ -4,58 +4,63 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            nombre
-        </th>
-        <th>
-            percio unitario
-        </th>
-        <th>
-            descripcion
-        </th>
-        <th>
-            cantidad
-        </th>
-        <th>
-            proveedor.nombre
-        </th>
-        <th></th>
-    </tr>
 
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.nombre)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.percio_unitario)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.descripcion)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.cantidad)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.proveedor.nombre)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.id }) |
-                @Html.ActionLink("Details", "Details", new { id = item.id }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.id }, new { @class = "linkDelete" })
-            </td>
-        </tr>
-    }
 
-</table>
+<div class="row m-4">
+    <div class="col-sm-12">
+        <div class="card">
+            <div class="card-header">
+                Lista de Productos
+            </div>
+            <div class="card-body">
+                <table class="display responsive nowrap" id="myTable" style="width:100%">
+                    <thead>
+                        <tr>
+                            <th>nombre</th>
+                            <th>precio_unitario</th>
+                            <th>descripcion</th>
+                            <th>cantidad</th>
+                            <th>proveedor.nombre </th>
+                        </tr>
+                    </thead>
+
+
+
+
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.nombre)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.percio_unitario)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.descripcion)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.cantidad)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.proveedor.nombre)
+                            </td>
+                            <td>
+                                @Html.ActionLink("Editar", "Edit", new { id = item.id }) |
+                                @Html.ActionLink("Detalle", "Details", new { id = item.id }) |
+                                @Html.ActionLink("Delete", "Delete", new { id = item.id }, new { @class = "linkDelete" })
+                            </td>
+                        </tr>
+                    }
+
+                </table>
+            </div>
+        </div>
+
+    </div>
+
+</div>
 
 @section scripts{
     <script>
@@ -66,3 +71,40 @@
         })
     </script>
 }
+
+<div class="row m-4">
+    <div class="col-sm-12">
+        <div class="card">
+            <div class="card-header">
+                <thead>
+                    <tr>
+                        <th>Crear Producto</th>
+
+                    </tr>
+                </thead>
+            </div>
+            <div class="card-body">
+                <table class="display responsive nowrap" id="myTable" style="width:50%">
+                    <thead>
+                        <tr>
+
+                            <p>
+                                @Html.ActionLink("Crear Producto", "Create")
+                            </p>
+                        </tr>
+                    </thead>
+
+                </table>
+            </div>
+        </div>
+
+    </div>
+
+
+</div>
+
+
+
+
+
+
