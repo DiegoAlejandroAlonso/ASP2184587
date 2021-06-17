@@ -13,10 +13,11 @@
         <div class="col-sm-12">
             <div class="card">
                 <div class="card-header">
-                    Crear Producto Compra
+                    <p><strong>Crear Producto Compras</strong></p>
+                    
                 </div>
                 <div class="card-body">
-                    <table class="display responsive nowrap" id="myTable" style="width:100%">
+                    <table class=" display responsive nowrap" id="myTable" style="width:100%">
                         <thead>
                             <div class="form-horizontal">
 
@@ -48,7 +49,7 @@
 
                                 <div class="form-group">
                                     <div class="col-md-offset-2 col-md-10">
-                                        <input type="submit" value="Create" class="btn btn-default" />
+                                        <input class="btn btn-success" type="submit" value="Crear" />
                                     </div>
                                 </div>
                             </div>
@@ -66,7 +67,7 @@
 }
 
 <div>
-    @Html.ActionLink("Regrasar a la lista", "Index")
+    <a class="btn btn-primary" href="/producto_compra/Index">Volver a la lista <span class="glyphicon glyphicon-hand-left"></span></a>
 </div>
 
 @section Scripts {

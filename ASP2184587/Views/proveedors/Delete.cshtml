@@ -57,8 +57,8 @@
                     @Html.AntiForgeryToken()
 
                     <div class="form-actions no-color">
-                        <input type="submit" value="Delete" class="btn btn-default" /> |
-                        @Html.ActionLink("Regresar a la lista", "Index")
+                        <input class="btn btn-danger" type="submit" value="Eliminar" />
+                        <a class="btn btn-success" href="/proveedors/Index">Volver a la lista <span class="glyphicon glyphicon-hand-left"></span></a>
                     </div>
                 }
             </div>

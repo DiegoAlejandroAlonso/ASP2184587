@@ -1,84 +1,58 @@
 ﻿@model ASP2184587.Models.usuario
 
-@{
-    ViewBag.Title = "Delete";
-}
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>usuario</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.nombre)
+        </dt>
 
+        <dd>
+            @Html.DisplayFor(model => model.nombre)
+        </dd>
 
-<div class="row m-4">
-    <div class="col-sm-12">
-        <div class="card">
-            <div class="card-header">
-                Estas seguro de Eliminar?
-            </div>
-            <div class="card-body">
-                <table class="display responsive nowrap" id="myTable" style="width:100%">
-                    <thead>
-                        <div>
-                            <h4>usuario</h4>
-                            <hr />
-                            <dl class="dl-horizontal">
-                                <dt>
-                                    @Html.DisplayNameFor(model => model.nombre)
-                                </dt>
+        <dt>
+            @Html.DisplayNameFor(model => model.apellido)
+        </dt>
 
-                                <dd>
-                                    @Html.DisplayFor(model => model.nombre)
-                                </dd>
+        <dd>
+            @Html.DisplayFor(model => model.apellido)
+        </dd>
 
-                                <dt>
-                                    @Html.DisplayNameFor(model => model.apellido)
-                                </dt>
+        <dt>
+            @Html.DisplayNameFor(model => model.fecha_nacimiento)
+        </dt>
 
-                                <dd>
-                                    @Html.DisplayFor(model => model.apellido)
-                                </dd>
+        <dd>
+            @Html.DisplayFor(model => model.fecha_nacimiento)
+        </dd>
 
-                                <dt>
-                                    @Html.DisplayNameFor(model => model.fecha_nacimiento)
-                                </dt>
+        <dt>
+            @Html.DisplayNameFor(model => model.email)
+        </dt>
 
-                                <dd>
-                                    @Html.DisplayFor(model => model.fecha_nacimiento)
-                                </dd>
+        <dd>
+            @Html.DisplayFor(model => model.email)
+        </dd>
 
-                                <dt>
-                                    @Html.DisplayNameFor(model => model.email)
-                                </dt>
+        <dt>
+            @Html.DisplayNameFor(model => model.password)
+        </dt>
 
-                                <dd>
-                                    @Html.DisplayFor(model => model.email)
-                                </dd>
+        <dd>
+            @Html.DisplayFor(model => model.password)
+        </dd>
 
-                                <dt>
-                                    @Html.DisplayNameFor(model => model.password)
-                                </dt>
+    </dl>
 
-                                <dd>
-                                    @Html.DisplayFor(model => model.password)
-                                </dd>
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
 
-                            </dl>
-
-
-
-
-
-                    </thead>
-                </table>
-            </div>
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
         </div>
-    </div>
+    }
 </div>
-
-
-@using (Html.BeginForm())
-{
-    @Html.AntiForgeryToken()
-
-    <div class="form-actions no-color">
-        <input type="submit" value="Delete" class="btn btn-default" /> |
-        @Html.ActionLink("Back to List", "Index")
-    </div>
-}
-

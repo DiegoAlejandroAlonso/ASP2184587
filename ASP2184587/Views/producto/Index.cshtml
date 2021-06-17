@@ -47,9 +47,11 @@
                                 @Html.DisplayFor(modelItem => item.proveedor.nombre)
                             </td>
                             <td>
-                                @Html.ActionLink("Editar", "Edit", new { id = item.id }) |
-                                @Html.ActionLink("Detalle", "Details", new { id = item.id }) |
-                                @Html.ActionLink("Delete", "Delete", new { id = item.id }, new { @class = "linkDelete" })
+
+                                <a class="btn btn-warning" href="/producto/Edit/@item.id">Edit <span class="glyphicon glyphicon-edit"></span></a>
+                                <a class="btn btn-info" href="/producto/Details/@item.id">Details <span class="glyphicon glyphicon-eye-open"></span></a>
+                                <a class="btn btn-danger" href="/producto/Delete/@item.id">Delete <span class="glyphicon glyphicon-trash"></span></a>
+
                             </td>
                         </tr>
                     }
@@ -89,7 +91,7 @@
                         <tr>
 
                             <p>
-                                @Html.ActionLink("Crear Producto", "Create")
+                                <a class="btn btn-success" href="/producto/Create">Crear Nuevo Porducto <span class="glyphicon glyphicon-folder-open"></span></a>
                             </p>
                         </tr>
                     </thead>

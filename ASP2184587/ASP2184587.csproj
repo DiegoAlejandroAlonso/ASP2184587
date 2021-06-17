@@ -181,6 +181,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\clienteController.cs" />
     <Compile Include="Controllers\comprasController.cs" />
+    <Compile Include="Controllers\db.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\productoController.cs" />
     <Compile Include="Controllers\producto_compraController.cs" />
@@ -353,10 +354,10 @@
     <Content Include="Views\producto\reporte.cshtml" />
     <Content Include="Views\Shared\_LayoutUsuario.cshtml" />
     <Content Include="Views\Shared\_Navbar.cshtml" />
-    <Content Include="Views\Usuario\Delete.cshtml" />
     <Content Include="Views\proveedors\uploadCSV.cshtml" />
     <Content Include="Uploads\Libro1.csv" />
     <Content Include="Uploads\Libro2.csv" />
+    <Content Include="Views\Usuario\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

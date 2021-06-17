@@ -9,10 +9,10 @@
     <div class="col-sm-12">
         <div class="card">
             <div class="card-header">
-                Lista de Compras
+                <p><strong>Lista Compras</strong></p>
             </div>
             <div class="card-body">
-                <table class="display responsive nowrap" id="myTable" style="width:100%">
+                <table class=" table-bordered table-hover responsive nowrap" id="myTable" style="width:100%">
                     <thead>
                         <tr>
                             <th>Fecha</th>
@@ -43,18 +43,10 @@
                             </td>
                             <td>
 
-                                @Html.ActionLink("Editar", "Edit", new { id = item.id })
+                                <a class="btn btn-warning" href="/compras/Edit/@item.id">Edit <span class="glyphicon glyphicon-edit"></span></a>
+                                <a class="btn btn-info" href="/compras/Details/@item.id">Details <span class="glyphicon glyphicon-eye-open"></span></a>
+                                <a class="btn btn-danger" href="/compras/Delete/@item.id">Delete <span class="glyphicon glyphicon-trash"></span></a>
 
-
-
-                                @Html.ActionLink("Detalle", "Details", new { id = item.id })
-
-
-
-                                @Html.ActionLink("Eliminar", "Delete", new { id = item.id }, new { @class = "linkDelete" }) ═
-                                <button class='btn btn-primary btn-sm' type='button' onclick='abrirModal(" + data + ")'><i class='fas fa-pen'></i></button>
-
-                                <button class='btn btn-danger btn-sm ml-2' type='button' onclick='Eliminar(" + data + ")'><i class='fa fa-trash'></i></button>
                             </td>
                         </tr>
                     }
@@ -83,7 +75,7 @@
             <div class="card-header">
                 <thead>
                     <tr>
-                        <th>Crear Compra</th>
+                        <p><strong>Crear Compra</strong></p>
 
                     </tr>
                 </thead>
@@ -94,7 +86,7 @@
                    
 
                             <p>
-                                @Html.ActionLink("Crear Compra", "Create")
+                                <a class="btn btn-success" href="/compras/Create">Crear Proveedor <span class="glyphicon glyphicon-folder-open"></span></a>
                             </p>
                 
                     </thead>

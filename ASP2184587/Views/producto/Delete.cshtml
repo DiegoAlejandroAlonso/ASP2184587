@@ -8,14 +8,14 @@
     <div class="col-sm-12">
         <div class="card">
             <div class="card-header">
-                Estas seguro de Eliminar?
+                Estas seguro de Eliminar Este Producto?
             </div>
             <div class="card-body">
                 <table class="display responsive nowrap" id="myTable" style="width:100%">
                     <thead>
 
                         <div>
-                            <h4>producto</h4>
+                            
                             <hr />
                             <dl class="dl-horizontal">
                                 <dt>
@@ -76,9 +76,9 @@
 {
     @Html.AntiForgeryToken()
 
-    <div class="form-actions no-color">
-        <input type="submit" value="Delete" class="btn btn-default" /> |
-        @Html.ActionLink("Back to List", "Index")
-    </div>
+<div class="form-actions no-color">
+    <input class="btn btn-danger" type="submit" value="Eliminar" />
+    <a class="btn btn-primary" href="/producto/Index">Volver a la lista <span class="glyphicon glyphicon-hand-left"></span></a>
+</div>
 }
 </div>

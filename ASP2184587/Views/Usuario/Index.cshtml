@@ -1,8 +1,6 @@
 ﻿@model IEnumerable<ASP2184587.Models.usuario>
 
-@{
-    ViewBag.Title = "Index";
-}
+@{ ViewBag.Title = "Index"; }
 
 
 
@@ -12,10 +10,10 @@
     <div class="col-sm-12">
         <div class="card">
             <div class="card-header">
-                Lista de Usuarios
+                <p><strong>Lista Usuarios</strong></p>
             </div>
             <div class="card-body">
-                <table class="display responsive nowrap" id="myTable" style="width:100%">
+                <table class="table-bordered table-hover responsive nowrap " id="myTable" style="width:100%">
                     <thead>
                         <tr>
                             <th>Nombre</th>
@@ -30,67 +28,30 @@
 
                     @foreach (var item in Model)
                     {
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.nombre)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.apellido)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.email)
-                    </td>
-                    <td>
-
-                        @Html.ActionLink("Editar", "Edit", new { id = item.id })  
-
-                        
-
-
-                         @Html.ActionLink("Detalle", "Details", new { id = item.id }) 
-
-                        
-
-                         @Html.ActionLink("Eliminar", "Delete", new { id = item.id }, new { @class = "linkDelete" }) ═
-
-                        <button class='btn btn-primary btn-sm' type='button' onclick='abrirModal(" + data + ")'><i class='fas fa-pen'></i></button>
-
-                        <button class='btn btn-danger btn-sm ml-2' type='button' onclick='Eliminar(" + data + ")'><i class='fa fa-trash'></i></button>
-
-
-                    </td>
-                </tr>}
-
-                </table>
-            </div>
-        </div>
-        
-    </div>
-
-</div>
-
-
-<div class="row m-4">
-    <div class="col-sm-12">
-        <div class="card">
-            <div class="card-header">
-                <thead>
-                    <tr>
-                        <th>Crear Usuario</th>
-
-                    </tr>
-                </thead>
-            </div>
-            <div class="card-body">
-                <table class="display responsive nowrap" id="myTable" style="width:50%">
-                    <thead>
                         <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.nombre)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.apellido)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.email)
+                            </td>
+                            <td>
 
-                            <p>
-                                @Html.ActionLink("Crear Usuario", "Create")
-                            </p>
+
+                                <a class="btn btn-warning" href="/Usuario/Edit/@item.id">Edit <span class="glyphicon glyphicon-edit"></span></a>
+                                <a class="btn btn-info" href="/Usuario/Details/@item.id">Details <span class="glyphicon glyphicon-eye-open"></span></a>
+
+                                @Html.ActionLink("Eliminar", "Delete", new { id = item.id }, new { @class = "linkDelete" })
+
+
+
+                            </td>
                         </tr>
-                    </thead>
+
+                    }
 
                 </table>
             </div>
@@ -107,26 +68,40 @@
                 event.preventDefault();
             }
         })
-
-                
-            
-               
-
-
-     
-
-      
-
-
-
-
-
-
-
-
-
-
-
-
     </script>
 }
+
+
+<div class="row m-4">
+    <div class="col-sm-12">
+        <div class="card">
+            <div class="card-header">
+                <thead>
+                    <tr>
+                        <p><strong>Crear Usuarios</strong></p>
+
+                    </tr>
+                </thead>
+            </div>
+            <div class="card-body">
+                <table class="display responsive nowrap" id="myTable" style="width:50%">
+                    <thead>
+                        <tr>
+
+                            <p>
+                                <a class="btn btn-success" href="/Usuario/Create">Crear Usuario <span class="glyphicon glyphicon-folder-open"></span></a>
+                            </p>
+                        </tr>
+                    </thead>
+
+                </table>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+
+
+

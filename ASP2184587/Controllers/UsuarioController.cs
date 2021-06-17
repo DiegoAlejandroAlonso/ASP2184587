@@ -139,7 +139,6 @@ namespace ASP2184587.Controllers
                 return View();
             }
         }
-
         public ActionResult nuevoIndex()
         {
             return View();

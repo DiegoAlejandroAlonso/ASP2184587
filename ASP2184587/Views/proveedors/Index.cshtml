@@ -9,11 +9,11 @@
     <div class="col-sm-12">
         <div class="card">
             <div class="card-header">
-                Lista de Proveedores
+              <p><strong>Lista Proveedores</strong></p>
             </div>
-            <div class="card-body">
-                <table class="display responsive nowrap" id="myTable" style="width:100%">
-                    <thead>
+            <div class="table-responsive">
+                <table class="  table-bordered table-hover responsive nowrap" id="myTable" style="width:100%">
+                    <thead class="thead-dark">
                         <tr>
                             <th>Nombre</th>
                             <th>Direccion</th>
@@ -28,41 +28,34 @@
                     @foreach (var item in Model)
                     {
                         <tr>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.nombre)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.direccion)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.telefono)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.nombre_contacto)
-                            </td>
-                            <td>
-                            </td>
-                            <td>
+                     
+                        <td>
+                            @Html.DisplayFor(modelItem => item.nombre)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.direccion)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.telefono)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.nombre_contacto)
+                        </td>
+                        <td>
+                        </td>
+                        <td>
 
-                                @Html.ActionLink("Editar", "Edit", new { id = item.id })
-
-
-
-                                @Html.ActionLink("Detalle", "Details", new { id = item.id })
-
-
-                                @Html.ActionLink("Eliminar", "Delete", new { id = item.id }, new { @class = "linkDelete" })-
-
-                                <button class='btn btn-primary btn-sm' type='button' onclick='abrirModal(" + data + ")'><i class='fas fa-pen'></i></button>
-                                <button class='btn btn-danger btn-sm ml-2' type='button' onclick='Eliminar(" + data + ")'><i class='fa fa-trash'></i></button>
+                            <a class="btn btn-warning" href="/proveedors/Edit/@item.id">Edit <span class="glyphicon glyphicon-edit"></span></a>
+                            <a class="btn btn-info" href="/proveedors/Details/@item.id">Details <span class="glyphicon glyphicon-eye-open"></span></a>
+                            <a class="btn btn-danger" href="/proveedors/Delete/@item.id">Delete <span class="glyphicon glyphicon-trash"></span></a>
 
 
 
-                            </td>
+                        </td>
                         </tr>
                     }
 
-                   
+
 
                 </table>
             </div>
@@ -88,7 +81,7 @@
             <div class="card-header">
                 <thead>
                     <tr>
-                        <th>Crear Proveedor</th>
+                        <p><strong>Crear Proveedores</strong></p>
 
                     </tr>
                 </thead>
@@ -99,7 +92,7 @@
                         <tr>
 
                             <p>
-                                @Html.ActionLink("Crear Proveedor", "Create")
+                                <a class="btn btn-success" href="/proveedors/Create">Crear Proveedor <span class="glyphicon glyphicon-folder-open"></span></a>
                             </p>
                         </tr>
                     </thead>
@@ -119,7 +112,7 @@
             <div class="card-header">
                 <thead>
                     <tr>
-                        <th>Subir Archivo CSV</th>
+                        <p><strong>Subir Archivo CSV </strong></p>
 
                     </tr>
                 </thead>
@@ -130,7 +123,8 @@
                         <tr>
 
                             <p>
-                                @Html.ActionLink("Subir archivo", "uploadCSV")
+                                <a class="btn btn-success" href="/proveedors/uploadCSV">Subir Archivo CSV <span class="glyphicon glyphicon-floppy-open"></span></a>
+                                
                             </p>
                         </tr>
                     </thead>

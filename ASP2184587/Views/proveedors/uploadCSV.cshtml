@@ -16,8 +16,10 @@
 
                         @using (Html.BeginForm("uploadCSV", "proveedors", FormMethod.Post, new { enctype = "multipart/form-data" }))
                         {
-                            <input type="file" name="fileForm" />
-                            <input type="submit" value="enviar" />
+                            <input   type="file" name="fileForm" />
+
+                            
+                            <input class="btn btn-danger" type="submit" value="Enviar" />
                         }
 
                     </thead>
@@ -28,5 +30,6 @@
 </div>
 
 <div>
-    @Html.ActionLink("Regresar a la Lista Proveedores", "Index")
+    <a class="btn btn-primary" href="/proveedors/Index">Volver a la lista <span class="glyphicon glyphicon-hand-left"></span></a>
+    
 </div>

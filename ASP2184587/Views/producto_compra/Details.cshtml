@@ -4,7 +4,7 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Editar Producto Compra</h2>
+<h2>Detalle Producto Compra</h2>
 
 <div>
     
@@ -37,6 +37,6 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id }, new { @class = "btn btn-warning" })
+    <a class="btn btn-primary" href="/producto_compra/Index">Volver a la lista <span class="glyphicon glyphicon-hand-left"></span></a>
 </p>
