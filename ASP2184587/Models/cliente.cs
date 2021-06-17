@@ -28,8 +28,7 @@ namespace ASP2184587.Models
         [Required(ErrorMessage = " EL CAMPO DOCUMENTO ES OBLIGATORIO")]
         public string documento { get; set; }
 
-        [Required]
-
+      
         [EmailAddress(ErrorMessage = "EL CAMPO EMAIL ES OBLIGATORIO")]
         public string email { get; set; }
 

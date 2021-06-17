@@ -1,6 +1,9 @@
 ﻿@model IEnumerable<ASP2184587.Models.usuario>
 
-@{ ViewBag.Title = "Index"; }
+@{
+    ViewBag.Title = "Index";
+}
+
 
 
 
@@ -27,40 +30,45 @@
 
                     @foreach (var item in Model)
                     {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.nombre)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.apellido)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.email)
-            </td>
-            <td>
-                @Html.ActionLink("Editar", "Edit", new { id = item.id }) |
-                @Html.ActionLink("Detalle", "Details", new { id = item.id }) |
-                @Html.ActionLink("Eliminar", "Delete", new { id = item.id })
-            </td>
-        </tr>}
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.nombre)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.apellido)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.email)
+                    </td>
+                    <td>
+
+                        @Html.ActionLink("Editar", "Edit", new { id = item.id })  
+
+                        
+
+
+                         @Html.ActionLink("Detalle", "Details", new { id = item.id }) 
+
+                        
+
+                         @Html.ActionLink("Eliminar", "Delete", new { id = item.id }, new { @class = "linkDelete" }) ═
+
+                        <button class='btn btn-primary btn-sm' type='button' onclick='abrirModal(" + data + ")'><i class='fas fa-pen'></i></button>
+
+                        <button class='btn btn-danger btn-sm ml-2' type='button' onclick='Eliminar(" + data + ")'><i class='fa fa-trash'></i></button>
+
+
+                    </td>
+                </tr>}
 
                 </table>
             </div>
         </div>
-
+        
     </div>
 
 </div>
 
-@section scripts{
-    <script>
-        $(".linkDelete").click(function (event) {
-            if (!confirm('¿ Esta seguro de eliminar ?')) {
-                event.preventDefault();
-            }
-        })
-    </script>
-}
 
 <div class="row m-4">
     <div class="col-sm-12">
@@ -90,5 +98,35 @@
 
     </div>
 
+</div>
 
-</div>  
+@section scripts{
+    <script>
+        $(".linkDelete").click(function (event) {
+            if (!confirm('¿ Esta seguro de eliminar ?')) {
+                event.preventDefault();
+            }
+        })
+
+                
+            
+               
+
+
+     
+
+      
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+}

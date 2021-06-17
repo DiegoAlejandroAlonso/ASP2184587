@@ -3,47 +3,66 @@
 @{
     ViewBag.Title = "Delete";
 }
+<div class="row m-4">
+    <div class="col-sm-12">
+        <div class="card">
+            <div class="card-header">
+                Estas seguro de Eliminar?
+            </div>
+            <div class="card-body">
+                <table class="display responsive nowrap" id="myTable" style="width:100%">
+                    <thead>
 
-<h2>Delete</h2>
+                        <div>
 
-<h3>Are you sure you want to delete this?</h3>
-<div>
-    <h4>compra</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            fecha
-        </dt>
+                            <hr />
+                            <dl class="dl-horizontal">
+                                <dt>
+                                    fecha
+                                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.fecha)
-        </dd>
+                                <dd>
+                                    @Html.DisplayFor(model => model.fecha)
+                                </dd>
 
-        <dt>
-           total
-        </dt>
+                                <dt>
+                                    total
+                                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.total)
-        </dd>
+                                <dd>
+                                    @Html.DisplayFor(model => model.total)
+                                </dd>
 
-        <dt>
-            cliente nombre
-        </dt>
+                                <dt>
+                                    cliente nombre
+                                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.cliente.nombre)
-        </dd>
+                                <dd>
+                                    @Html.DisplayFor(model => model.cliente.nombre)
+                                </dd>
 
-        <dt>
-            usuario nombre
-        </dt>
+                                <dt>
+                                    usuario nombre
+                                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.usuario.nombre)
-        </dd>
+                                <dd>
+                                    @Html.DisplayFor(model => model.usuario.nombre)
+                                </dd>
 
-    </dl>
+                            </dl>
+
+
+
+
+                    </thead>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
 
     @using (Html.BeginForm()) {
         @Html.AntiForgeryToken()
@@ -53,4 +72,4 @@
             @Html.ActionLink("Back to List", "Index")
         </div>
     }
-</div>
+

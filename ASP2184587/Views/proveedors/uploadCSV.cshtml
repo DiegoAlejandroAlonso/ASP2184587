@@ -1,0 +1,32 @@
+﻿@{
+    ViewBag.Title = "uploadCSV";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="row m-4">
+    <div class="col-sm-12">
+        <div class="card">
+            <div class="card-header">
+                Cargar archivo CSV
+            </div>
+            <div class="card-body">
+                <table class="display responsive nowrap" id="myTable" style="width:100%">
+                    <thead>
+
+                        @using (Html.BeginForm("uploadCSV", "proveedors", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                        {
+                            <input type="file" name="fileForm" />
+                            <input type="submit" value="enviar" />
+                        }
+
+                    </thead>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div>
+    @Html.ActionLink("Regresar a la Lista Proveedores", "Index")
+</div>

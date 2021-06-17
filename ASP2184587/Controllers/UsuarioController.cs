@@ -8,6 +8,7 @@ using System.Web.Mvc;
 using System.Web.Security;
 //importando los modelos de base de datos
 using ASP2184587.Models;
+using Rotativa;
 
 namespace ASP2184587.Controllers
 {
@@ -187,8 +188,16 @@ namespace ASP2184587.Controllers
         public ActionResult LogOff()
         {
            
-            return RedirectToAction("Login", "Asuario");
+            return RedirectToAction("Login", "Index");
         }
+
+        public ActionResult ImprimirReporte()
+        {
+            return new ActionAsPdf("Reporte") { FileName = "Reporte.pdf" };
+
+        }
+
+
 
 
     }

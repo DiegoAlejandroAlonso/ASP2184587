@@ -6,6 +6,7 @@ using System.Web;
 using System.Web.Mvc;
 //importando los modelos de base de datos
 using ASP2184587.Models;
+using Rotativa;
 
 namespace ASP2184587.Controllers
 {
@@ -122,6 +123,12 @@ namespace ASP2184587.Controllers
                 return View();
             }
         }
+
+        public ActionResult ImprimirReporte()
+        {
+            return new ActionAsPdf("Reporte") { FileName = "Reporte.pdf" };
+        }
+
 
     }
 

@@ -4,7 +4,7 @@
     ViewBag.Title = "Index";
 }
 
-<
+
 
 <div class="row m-4">
     <div class="col-sm-12">
@@ -17,7 +17,7 @@
                     <thead>
                         <tr>
                             <th>cantidad</th>
-                            <th>compra.id</th>
+                            <th>compra</th>
                             <th> producto nombre</th>
                            
                         </tr>
@@ -41,9 +41,19 @@
                            
                            
                             <td>
-                                @Html.ActionLink("Editar", "Edit", new { id = item.id }) |
-                                @Html.ActionLink("Detalle", "Details", new { id = item.id }) |
-                                @Html.ActionLink("Delete", "Delete", new { id = item.id }, new { @class = "linkDelete" })
+
+                                @Html.ActionLink("Editar", "Edit", new { id = item.id })
+
+
+
+                                @Html.ActionLink("Detalle", "Details", new { id = item.id })
+
+
+
+                                @Html.ActionLink("Eliminar", "Delete", new { id = item.id }, new { @class = "linkDelete" }) ═
+                                <button class='btn btn-primary btn-sm' type='button' onclick='abrirModal(" + data + ")'><i class='fas fa-pen'></i></button>
+
+                                <button class='btn btn-danger btn-sm ml-2' type='button' onclick='Eliminar(" + data + ")'><i class='fa fa-trash'></i></button>
                             </td>
                         </tr>
                     }
