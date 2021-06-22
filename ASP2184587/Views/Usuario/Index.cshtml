@@ -6,60 +6,57 @@
 
 
 
-<div class="row m-4">
-    <div class="col-sm-12">
-        <div class="card">
-            <div class="card-header">
-                <p><strong>Lista Usuarios</strong></p>
-            </div>
-            <div class="card-body">
-                <table class="table-bordered table-hover responsive nowrap " id="myTable" style="width:100%">
-                    <thead>
-                        <tr>
-                            <th>Nombre</th>
-                            <th>Apellidos</th>
-                            <th>Correo</th>
-                            <th></th>
-                        </tr>
-                    </thead>
 
-
-
-
-                    @foreach (var item in Model)
-                    {
-                        <tr>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.nombre)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.apellido)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.email)
-                            </td>
-                            <td>
-
-
-                                <a class="btn btn-warning" href="/Usuario/Edit/@item.id">Edit <span class="glyphicon glyphicon-edit"></span></a>
-                                <a class="btn btn-info" href="/Usuario/Details/@item.id">Details <span class="glyphicon glyphicon-eye-open"></span></a>
-
-                                @Html.ActionLink("Eliminar", "Delete", new { id = item.id }, new { @class = "linkDelete" })
-
-
-
-                            </td>
-                        </tr>
-
-                    }
-
-                </table>
-            </div>
+    <div class="card">
+        <div class="card-header">
+            <p><strong>Lista Usuarios</strong></p>
         </div>
+        <div class="card-body">
+            <table class="table-bordered table-hover responsive nowrap " id="myTable" style="width:50%">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Apellidos</th>
+                        <th>Correo</th>
+                        <th></th>
+                    </tr>
+                </thead>
 
+
+
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.nombre)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.apellido)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.email)
+                        </td>
+                        <td>
+
+
+                            <a class="btn btn-warning" href="/Usuario/Edit/@item.id">Edit <span class="glyphicon glyphicon-edit"></span></a>
+                            <a class="btn btn-info" href="/Usuario/Details/@item.id">Details <span class="glyphicon glyphicon-eye-open"></span></a>
+
+                            @Html.ActionLink("Eliminar", "Delete", new { id = item.id }, new { @class = "linkDelete" })
+
+
+
+                        </td>
+                    </tr>
+
+                }
+
+            </table>
+        </div>
     </div>
 
-</div>
+
 
 @section scripts{
     <script>
@@ -72,8 +69,7 @@
 }
 
 
-<div class="row m-4">
-    <div class="col-sm-12">
+
         <div class="card">
             <div class="card-header">
                 <thead>
@@ -84,7 +80,7 @@
                 </thead>
             </div>
             <div class="card-body">
-                <table class="display responsive nowrap" id="myTable" style="width:50%">
+                <table class="display responsive nowrap" id="myTable" style="width:100%">
                     <thead>
                         <tr>
 
@@ -98,10 +94,6 @@
             </div>
         </div>
 
-    </div>
-
-</div>
-
-
+   
 
 

@@ -1,101 +1,263 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ASP-DIEGO ALONSO</title>
-    @Styles.Render("~/Content/css")
-    @Styles.Render("~/bundles/Plugins/css")
-    @Scripts.Render("~/bundles/modernizr")
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    @*<link rel="icon" href="images/favicon.ico" type="image/ico" />*@
 
-    <!-- Bootstrap -->
-    <link href="/lib/vendor/fontawesome-free/css/all.css" rel="stylesheet" type="text/css">
+    <link href="~/Vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
 
-    <link href="/lib/css/sb-admin-2.css" rel="stylesheet">
+    <link href="~/Vendors/fontawesome/css/font-awesome.min.css" rel="stylesheet" />
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <link href="~/Vendors/nprogress/nprogress.css" rel="stylesheet" />
 
-    <!-- FontAwesome -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link href="~/Content/css/custom.min.css" rel="stylesheet" />
 
-    <!-- Site -->
-    <link rel="stylesheet" href="~/Content/Site.css">
-    <script src="~/Scripts/Site.js"></script>
-    @RenderSection("Styles", required: false)
+
+   
+
+  
 </head>
-<body>
-    <div class="d-flex" id="wrapper">
-        <!-- ============================================================== -->
-        <!-- Sidebar -->
-        <!-- ============================================================== -->
-        <div class="bg-light border-right" id="sidebar-wrapper">
-            <div class="sidebar-heading">
-                <img src="~/Assets/angular-icon.svg" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
-                ASP-DIEGO ALONSO
-            </div>
-            <div class="list-group list-group-flush">
-                <li>@Html.ActionLink("Inicio", "Index", "Home", routeValues: null, htmlAttributes: new { @class = "list-group-item list-group-item-action bg-light" })</li>
 
-                <li>@Html.ActionLink("Contacto", "Contact", "Home", routeValues: null, htmlAttributes: new { @class = "list-group-item list-group-item-action bg-light" })</li>
+<body class="nav-md">
+    <div class="container body">
+        <div class="main_container">
+            <div class="col-md-3 left_col">
+                <div class="left_col scroll-view">
+                    <div class="navbar nav_title" style="border: 0;">
+                        <a href="/Home/Index" class="site_title"><i class="fa fa-desktop"></i> <span>ASP-D . A</span></a>
+                    </div>
 
-                @if (User.Identity.IsAuthenticated)
-                {
-                    <li>@Html.ActionLink("Usuario", "Index", "Usuario", routeValues: null, htmlAttributes: new { @class = "list-group-item list-group-item-action bg-light" })</li>
-                    <li>@Html.ActionLink("Cliente", "Index", "Cliente", routeValues: null, htmlAttributes: new { @class = "list-group-item list-group-item-action bg-light" })</li>
-                    <li>@Html.ActionLink("Proveedor", "Index", "proveedors", routeValues: null, htmlAttributes: new { @class = "list-group-item list-group-item-action bg-light" })</li>
-                    <li>@Html.ActionLink("Compras", "Index", "compras", routeValues: null, htmlAttributes: new { @class = "list-group-item list-group-item-action bg-light" })</li>}
-                <li>@Html.ActionLink("Producto", "Index", "Producto", routeValues: null, htmlAttributes: new { @class = "list-group-item list-group-item-action bg-light" })</li>}
-                <li>@Html.ActionLink("Producto Compras", "Index", "producto_compra", routeValues: null, htmlAttributes: new { @class = "list-group-item list-group-item-action bg-light" })</li>}
-                <li>@Html.ActionLink("Cerrar Sesion", "CloseSession", "Usuario", routeValues: null, htmlAttributes: new { @class = "list-group-item list-group-item-action bg-light" })</li>}
-            </div>
-        </div>
-        <!-- ============================================================== -->
-        <!-- End Sidebar -->
-        <!-- ============================================================== -->
-        <!-- ============================================================== -->
-        <!-- Page Content -->
-        <!-- ============================================================== -->
-        <div id="page-content-wrapper">
-            <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
-                <i class="fas fa-align-justify" id="menu-toggle"></i>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    @Html.Partial("_LoginPartial")
+                    <div class="clearfix"></div>
+
+                    <!-- menu profile quick info -->
+                    <div class="profile clearfix">
+                        <div class="profile_pic">
+                            <img src="~/Content/images/user.png" alt="Imagen de Usuario" class="img-circle profile_img">
+                        </div>
+                        <div class="profile_info">
+                            <span>Bienvenido,</span>
+                            <h2>Diego Alonso</h2>
+                        </div>
+                    </div>
+                    <!-- /menu profile quick info -->
+
+                    <br />
+
+                    <!-- sidebar menu -->
+                    <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+                        <div class="menu_section">
+                            <h3>General</h3>
+                            <ul class="nav side-menu">
+                                <li>
+                                    <a><i class="fa fa-home"></i> Home <span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav child_menu">
+                                        <li><a href="/Home/Index">Inicio</a></li>
+                                        <li><a href="/Home/Contact">Contacto</a></li>
+                                       
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a><i class="fa fa-user-secret"></i> Usuario <span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav child_menu">
+                                        <li><a href="@Url.Action("Index", "Usuario")">Lista Usuarios</a></li>
+                                        <li><a href="/Usuario/Create">Crear Usuarios</a></li>
+                                       
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a><i class="fa fa-users"></i> Cliente <span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav child_menu">
+                                        <li><a href="/cliente/Index">Lista de Clientes</a></li>
+                                        <li><a href="/cliente/Create">Crear Cliente</a></li>
+                                       
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a><i class="fa fa-user-plus"></i> Proveedores <span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav child_menu">
+                                        <li><a href="/proveedors/Index">Lista Proveedores</a></li>
+                                        <li><a href="/proveedors/Create">Crear Proveedores</a></li>
+                                        <li><a href="/proveedors/uploadCSV">Subir Csv</a></li>
+
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a><i class="fa fa-shopping-cart"></i> Compra <span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav child_menu">
+                                        <li><a href="/compras/Index">Lista Compras</a></li>
+                                        <li><a href="/compras/Create">Crear Compra</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a><i class="fa fa-tags"></i> Producto <span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav child_menu">
+                                        <li><a href="/producto/Index">Lista Productos</a></li>
+                                        <li><a href="/producto/Create">Crear Producto</a></li>
+                                      
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a><i class="fa fa-shopping-bag"></i>Producto Compra <span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav child_menu">
+                                        <li><a href="/producto_compra/Index">Lista De Producto Compra</a></li>
+                                        <li><a href="/producto_compra/Create">Crear Producto Compra</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+
+
+                    </div>
+                    <!-- /sidebar menu -->
+                    <!-- /menu footer buttons -->
+                    <div class="sidebar-footer hidden-small">
+                        <a data-toggle="tooltip" data-placement="top" title="Settings">
+                            <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+                        </a>
+                        <a data-toggle="tooltip" data-placement="top" title="FullScreen">
+                            <span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span>
+                        </a>
+                        <a data-toggle="tooltip" data-placement="top" title="Lock">
+                            <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
+                        </a>
+                        <a data-toggle="tooltip" data-placement="top" title="Logout" href="">
+                            <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
+                           
+                        </a>
+                    </div>
+                    <!-- /menu footer buttons -->
                 </div>
-            </nav>
-            <div class="container-fluid">
+            </div>
+
+            <!-- top navigation -->
+            <div class="top_nav">
+                <div class="nav_menu">
+                    <div class="nav toggle">
+                        <a id="menu_toggle"><i class="fa fa-bars"></i></a>
+                    </div>
+                    <nav class="nav navbar-nav">
+                        <ul class=" navbar-right">
+                            <li class="nav-item dropdown open" style="padding-left: 15px;">
+                                <a href="javascript:;" class="user-profile dropdown-toggle" aria-haspopup="true" id="navbarDropdown" data-toggle="dropdown" aria-expanded="false">
+                                    <img src="~/Content/images/user.png" alt="">Diego Alonso
+
+                                </a>
+                                <div class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href=""> Perfil</a>
+                                    <a class="dropdown-item" href="">
+                                        <span class="badge bg-red pull-right">50%</span>
+                                        <span>Configuracion</span>
+                                    </a>
+                                    <a class="dropdown-item" href="">Ayuda</a>
+                                    <a class="dropdown-item" href=""><i class="fa fa-sign-out pull-right"></i> Cerrar Sesion</a>
+                                </div>
+                            </li>
+
+                            <li role="presentation" class="nav-item dropdown open">
+                                <a href="javascript:;" class="dropdown-toggle info-number" id="navbarDropdown1" data-toggle="dropdown" aria-expanded="false">
+                                    <i class="fa fa-envelope-o"></i>
+                                    <span class="badge bg-green">6</span>
+                                </a>
+                                <ul class="dropdown-menu list-unstyled msg_list" role="menu" aria-labelledby="navbarDropdown1">
+                                    <li class="nav-item">
+                                        <a class="dropdown-item">
+                                            <span class="image"><img src="~/Content/images/no puede ser.jpg" alt="Profile Image" /></span>
+                                            
+                                            <span>
+                                                <span>Doogy</span>
+                                                <span class="time">1 mins ago</span>
+                                            </span>
+                                            <span class="message">
+                                                No puede ser
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="dropdown-item">
+                                            <span class="image"><img src="~/Content/images/levi.jpg" alt="Profile Image" /></span>
+                                            
+                                            <span>
+                                                <span>Levi Ackerman</span>
+                                                <span class="time">10 mins ago</span>
+                                            </span>
+                                            <span class="message">
+                                                Tengo sentimientos, que no los demuestre es diferente
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="dropdown-item">
+                                            <span class="image"><img src="~/Content/images/Igor.png" alt="Profile Image" /></span>
+                                            
+                                            <span>
+                                                <span>Igor </span>
+                                                <span class="time">2 mins ago</span>
+                                            </span>
+                                            <span class="message">
+                                                A mi gustar tourtoritas...
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="dropdown-item">
+                                            <span class="image"><img src="~/Content/images/salinas.jpg" alt="Profile Image" /></span>
+                                            
+                                            <span>
+                                                <span>Salinas</span>
+                                                <span class="time">3 mins ago</span>
+                                            </span>
+                                            <span class="message">
+                                                Listo ya pague tu fianza 
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <div class="text-center">
+                                            <a class="dropdown-item">
+                                                <strong>Mira Mas Mensajes</strong>
+                                                <i class="fa fa-angle-right"></i>
+                                            </a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <!-- /top navigation -->
+            <!-- page content -->
+            <div class="right_col" role="main">
                 @RenderBody()
             </div>
+            <!-- /page content -->
+            <!-- footer content -->
+            <footer>
+                <div class="pull-right">
+                    Diego Alejandro  Alonso
+                </div>
+                <div class="clearfix"></div>
+            </footer>
+            <!-- /footer content -->
         </div>
-
-       
-       
-
-        <!-- ============================================================== -->
-        <!-- End Page Content -->
-        <!-- ============================================================== -->
     </div>
 
-    <!-- ============================================================== -->
-    <!-- Menu Toggle Script -->
-    <!-- ============================================================== -->
-    <script>
-        $("#menu-toggle").click(function (e) {
-            e.preventDefault();
-            $("#wrapper").toggleClass("toggled");
-        });
-    </script>
 
+    <!-- scripts -->
+
+    <script src="~/Vendors/jquery/dist/jquery.js"></script>
+
+    <script src="~/Vendors/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="~/Vendors/nprogress/nprogress.js"></script>
+
+    <script src="~/Content/js/custom.js"></script>
     @RenderSection("scripts", required: false)
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    @Scripts.Render("~/bundles/Plugins/js")
-  
 </body>
+
 </html>
 

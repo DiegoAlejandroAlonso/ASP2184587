@@ -181,7 +181,6 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\clienteController.cs" />
     <Compile Include="Controllers\comprasController.cs" />
-    <Compile Include="Controllers\db.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\productoController.cs" />
     <Compile Include="Controllers\producto_compraController.cs" />
@@ -228,10 +227,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\angular-icon.svg" />
-    <Content Include="Content\bootstrap-theme.css" />
-    <Content Include="Content\bootstrap-theme.min.css" />
-    <Content Include="Content\bootstrap.css" />
-    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\css\custom.css" />
+    <Content Include="Content\css\custom.min.css" />
     <Content Include="Content\datatable\css\dataTables.bootstrap.css" />
     <Content Include="Content\datatable\css\dataTables.bootstrap.min.css" />
     <Content Include="Content\datatable\css\dataTables.bootstrap4.css" />
@@ -262,11 +259,23 @@
     <Content Include="Content\datatable\images\sort_desc.png" />
     <Content Include="Content\datatable\images\sort_desc_disabled.png" />
     <Content Include="Content\datatable\js\jquery.dataTables.min.js" />
-    <Content Include="Content\Usuario.css" />
+    <Content Include="Content\images\back_disabled.png" />
+    <Content Include="Content\images\back_enabled.png" />
+    <Content Include="Content\images\back_enabled_hover.png" />
+    <Content Include="Content\images\forward_disabled.png" />
+    <Content Include="Content\images\forward_enabled.png" />
+    <Content Include="Content\images\forward_enabled_hover.png" />
+    <Content Include="Content\images\Igor.png" />
+    <Content Include="Content\images\levi.jpg" />
+    <Content Include="Content\images\loading.gif" />
+    <Content Include="Content\images\no puede ser.jpg" />
+    <Content Include="Content\images\salinas.jpg" />
+    <Content Include="Content\images\user.png" />
+    <Content Include="Content\js\custom.js" />
+    <Content Include="Content\js\custom.min.js" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="Content\Site.css" />
     <Content Include="Models\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model1.edmx</DependentUpon>
@@ -281,8 +290,6 @@
     <Content Include="Rotativa\help-wkhtmltopdf.txt" />
     <Content Include="Rotativa\wkhtmltoimage.exe" />
     <Content Include="Rotativa\wkhtmltopdf.exe" />
-    <Content Include="Scripts\bootstrap.js" />
-    <Content Include="Scripts\bootstrap.min.js" />
     <EntityDeploy Include="Models\Model1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Model1.Designer.cs</LastGenOutput>
@@ -292,18 +299,80 @@
     </Content>
     <Content Include="App_Browsers\qt.browser" />
     <Content Include="Content\datatable\images\Sorting icons.psd" />
-    <None Include="Scripts\jquery-3.4.1.intellisense.js" />
-    <Content Include="Scripts\jquery-3.4.1.js" />
-    <Content Include="Scripts\jquery-3.4.1.min.js" />
-    <Content Include="Scripts\jquery-3.4.1.slim.js" />
-    <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
-    <None Include="Scripts\jquery.validate-vsdoc.js" />
-    <Content Include="Scripts\jquery.validate.js" />
-    <Content Include="Scripts\jquery.validate.min.js" />
-    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
-    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
-    <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Uploads\jijiji.png" />
+    <Content Include="Vendors\bootstrap\dist\css\bootstrap-grid.css" />
+    <Content Include="Vendors\bootstrap\dist\css\bootstrap-grid.min.css" />
+    <Content Include="Vendors\bootstrap\dist\css\bootstrap-reboot.css" />
+    <Content Include="Vendors\bootstrap\dist\css\bootstrap-reboot.min.css" />
+    <Content Include="Vendors\bootstrap\dist\css\bootstrap.css" />
+    <Content Include="Vendors\bootstrap\dist\css\bootstrap.min.css" />
+    <Content Include="Vendors\bootstrap\dist\js\bootstrap.bundle.js" />
+    <Content Include="Vendors\bootstrap\dist\js\bootstrap.bundle.min.js" />
+    <Content Include="Vendors\bootstrap\dist\js\bootstrap.js" />
+    <Content Include="Vendors\bootstrap\dist\js\bootstrap.min.js" />
+    <Content Include="Vendors\bootstrap\js\dist\alert.js" />
+    <Content Include="Vendors\bootstrap\js\dist\button.js" />
+    <Content Include="Vendors\bootstrap\js\dist\carousel.js" />
+    <Content Include="Vendors\bootstrap\js\dist\collapse.js" />
+    <Content Include="Vendors\bootstrap\js\dist\dropdown.js" />
+    <Content Include="Vendors\bootstrap\js\dist\index.js" />
+    <Content Include="Vendors\bootstrap\js\dist\modal.js" />
+    <Content Include="Vendors\bootstrap\js\dist\popover.js" />
+    <Content Include="Vendors\bootstrap\js\dist\scrollspy.js" />
+    <Content Include="Vendors\bootstrap\js\dist\tab.js" />
+    <Content Include="Vendors\bootstrap\js\dist\toast.js" />
+    <Content Include="Vendors\bootstrap\js\dist\tooltip.js" />
+    <Content Include="Vendors\bootstrap\js\dist\util.js" />
+    <Content Include="Vendors\bootstrap\js\src\alert.js" />
+    <Content Include="Vendors\bootstrap\js\src\button.js" />
+    <Content Include="Vendors\bootstrap\js\src\carousel.js" />
+    <Content Include="Vendors\bootstrap\js\src\collapse.js" />
+    <Content Include="Vendors\bootstrap\js\src\dropdown.js" />
+    <Content Include="Vendors\bootstrap\js\src\index.js" />
+    <Content Include="Vendors\bootstrap\js\src\modal.js" />
+    <Content Include="Vendors\bootstrap\js\src\popover.js" />
+    <Content Include="Vendors\bootstrap\js\src\scrollspy.js" />
+    <Content Include="Vendors\bootstrap\js\src\tab.js" />
+    <Content Include="Vendors\bootstrap\js\src\toast.js" />
+    <Content Include="Vendors\bootstrap\js\src\tools\sanitizer.js" />
+    <Content Include="Vendors\bootstrap\js\src\tooltip.js" />
+    <Content Include="Vendors\bootstrap\js\src\util.js" />
+    <Content Include="Vendors\bootstrap\js\tests\browsers.js" />
+    <Content Include="Vendors\bootstrap\js\tests\index.html" />
+    <Content Include="Vendors\bootstrap\js\tests\integration\bundle.js" />
+    <Content Include="Vendors\bootstrap\js\tests\integration\index.html" />
+    <Content Include="Vendors\bootstrap\js\tests\integration\rollup.bundle.js" />
+    <Content Include="Vendors\bootstrap\js\tests\karma.conf.js" />
+    <Content Include="Vendors\bootstrap\js\tests\unit\alert.js" />
+    <Content Include="Vendors\bootstrap\js\tests\unit\button.js" />
+    <Content Include="Vendors\bootstrap\js\tests\unit\carousel.js" />
+    <Content Include="Vendors\bootstrap\js\tests\unit\collapse.js" />
+    <Content Include="Vendors\bootstrap\js\tests\unit\dropdown.js" />
+    <Content Include="Vendors\bootstrap\js\tests\unit\modal.js" />
+    <Content Include="Vendors\bootstrap\js\tests\unit\popover.js" />
+    <Content Include="Vendors\bootstrap\js\tests\unit\scrollspy.js" />
+    <Content Include="Vendors\bootstrap\js\tests\unit\tab.js" />
+    <Content Include="Vendors\bootstrap\js\tests\unit\toast.js" />
+    <Content Include="Vendors\bootstrap\js\tests\unit\tooltip.js" />
+    <Content Include="Vendors\bootstrap\js\tests\unit\util.js" />
+    <Content Include="Vendors\bootstrap\js\tests\visual\alert.html" />
+    <Content Include="Vendors\bootstrap\js\tests\visual\button.html" />
+    <Content Include="Vendors\bootstrap\js\tests\visual\carousel.html" />
+    <Content Include="Vendors\bootstrap\js\tests\visual\collapse.html" />
+    <Content Include="Vendors\bootstrap\js\tests\visual\dropdown.html" />
+    <Content Include="Vendors\bootstrap\js\tests\visual\modal.html" />
+    <Content Include="Vendors\bootstrap\js\tests\visual\popover.html" />
+    <Content Include="Vendors\bootstrap\js\tests\visual\scrollspy.html" />
+    <Content Include="Vendors\bootstrap\js\tests\visual\tab.html" />
+    <Content Include="Vendors\bootstrap\js\tests\visual\toast.html" />
+    <Content Include="Vendors\bootstrap\js\tests\visual\tooltip.html" />
+    <Content Include="Vendors\fontawesome\css\font-awesome.css" />
+    <Content Include="Vendors\fontawesome\css\font-awesome.min.css" />
+    <Content Include="Vendors\fontawesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="Vendors\jquery\dist\jquery.js" />
+    <Content Include="Vendors\jquery\dist\jquery.min.js" />
+    <Content Include="Vendors\nprogress\nprogress.css" />
+    <Content Include="Vendors\nprogress\nprogress.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -358,23 +427,52 @@
     <Content Include="Uploads\Libro1.csv" />
     <Content Include="Uploads\Libro2.csv" />
     <Content Include="Views\Usuario\Delete.cshtml" />
+    <Content Include="Vendors\bootstrap\dist\css\bootstrap-grid.css.map" />
+    <Content Include="Vendors\bootstrap\dist\css\bootstrap-grid.min.css.map" />
+    <Content Include="Vendors\bootstrap\dist\css\bootstrap-reboot.css.map" />
+    <Content Include="Vendors\bootstrap\dist\css\bootstrap-reboot.min.css.map" />
+    <Content Include="Vendors\bootstrap\dist\css\bootstrap.css.map" />
+    <Content Include="Vendors\bootstrap\dist\css\bootstrap.min.css.map" />
+    <Content Include="Vendors\bootstrap\dist\js\bootstrap.bundle.js.map" />
+    <Content Include="Vendors\bootstrap\dist\js\bootstrap.bundle.min.js.map" />
+    <Content Include="Vendors\bootstrap\dist\js\bootstrap.js.map" />
+    <Content Include="Vendors\bootstrap\dist\js\bootstrap.min.js.map" />
+    <Content Include="Vendors\bootstrap\js\dist\alert.js.map" />
+    <Content Include="Vendors\bootstrap\js\dist\button.js.map" />
+    <Content Include="Vendors\bootstrap\js\dist\carousel.js.map" />
+    <Content Include="Vendors\bootstrap\js\dist\collapse.js.map" />
+    <Content Include="Vendors\bootstrap\js\dist\dropdown.js.map" />
+    <Content Include="Vendors\bootstrap\js\dist\index.js.map" />
+    <Content Include="Vendors\bootstrap\js\dist\modal.js.map" />
+    <Content Include="Vendors\bootstrap\js\dist\popover.js.map" />
+    <Content Include="Vendors\bootstrap\js\dist\scrollspy.js.map" />
+    <Content Include="Vendors\bootstrap\js\dist\tab.js.map" />
+    <Content Include="Vendors\bootstrap\js\dist\toast.js.map" />
+    <Content Include="Vendors\bootstrap\js\dist\tooltip.js.map" />
+    <Content Include="Vendors\bootstrap\js\dist\util.js.map" />
+    <Content Include="Vendors\bootstrap\js\tests\README.md" />
+    <Content Include="Vendors\bootstrap\js\tests\unit\.eslintrc.json" />
+    <Content Include="Vendors\fontawesome\css\font-awesome.css.map" />
+    <Content Include="Vendors\fontawesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="Vendors\fontawesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Vendors\fontawesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="Vendors\fontawesome\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Vendors\fontawesome\fonts\FontAwesome.otf" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Content\datatable\idioma\" />
+    <Folder Include="Scripts\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="Content\bootstrap.min.css.map" />
-    <Content Include="Content\bootstrap.css.map" />
-    <Content Include="Content\bootstrap-theme.min.css.map" />
-    <Content Include="Content\bootstrap-theme.css.map" />
     <None Include="packages.config" />
-    <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
-    <Content Include="Scripts\jquery-3.4.1.min.map" />
+    <Content Include="Vendors\jquery\dist\jquery.min.map" />
+    <Content Include="Views\Usuario\SubirCsv.cshtml" />
+    <Content Include="Views\compras\SubirCsv.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

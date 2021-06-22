@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using ASP2184587.Models;
 using Rotativa;
+using System.IO;
 
 namespace ASP2184587.Controllers
 {
@@ -140,6 +141,71 @@ namespace ASP2184587.Controllers
         {
             return new ActionAsPdf("Reporte") { FileName = "Reporte.pdf" };
         }
+
+
+        public ActionResult SubirCsv()
+        {
+            return View();
+        }
+
+
+        [HttpPost]
+
+        public ActionResult SubirCsv(HttpPostedFileBase fileform)
+        {
+
+            string filePath = string.Empty;
+
+            if (fileform != null)
+            {
+                //ruta de la carpeta que caragara el archivo
+                string path = Server.MapPath("~/Uploads/");
+
+                //verificar si la ruta de la carpeta existe
+                if (!Directory.Exists(path))
+                {
+                    Directory.CreateDirectory(path);
+                }
+
+                //obtener el nombre del archivo
+                filePath = path + Path.GetFileName(fileform.FileName);
+                //obtener la extension del archivo
+                string extension = Path.GetExtension(fileform.FileName);
+
+                //guardando el archivo
+                fileform.SaveAs(filePath);
+
+                string csvData = System.IO.File.ReadAllText(filePath);
+                foreach (string row in csvData.Split('\n'))
+                {
+                    if (!string.IsNullOrEmpty(row))
+                    {
+                        var newCompra = new compra
+                        {
+                            //fecha = row.Split(';')[0],
+                            //total = row.Split(';')[1],
+                            
+                            //id_usuario = row.Split(';')[2],
+                            //id_cliente = row.Split(';')[3],
+                        };
+
+                        using (var db = new inventarioEntities1())
+                        {
+                            db.compra.Add(newCompra);
+
+                            db.SaveChanges();
+
+                        }
+
+
+                    }
+                }
+
+            }
+            return View();
+
+        }
+
 
     }
 }

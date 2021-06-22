@@ -1,0 +1,32 @@
+﻿@{
+    ViewBag.Title = "SbuirCsv";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<div class="card">
+    <div class="card-header">
+        Cargar archivo CSV
+    </div>
+    <div class="card-body">
+        <table class="display responsive nowrap" id="myTable" style="width:100%">
+            <thead>
+
+                @using (Html.BeginForm("SubirCsv", "compras", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                {
+                    <input type="file" name="fileForm" />
+
+
+                    <input class="btn btn-danger" type="submit" value="Enviar" />
+                }
+
+            </thead>
+        </table>
+    </div>
+</div>
+
+<div>
+    <a class="btn btn-primary" href="/compras/Index">Volver a la lista <span class="glyphicon glyphicon-hand-left"></span></a>
+
+</div>

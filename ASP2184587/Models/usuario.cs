@@ -46,5 +46,9 @@ namespace ASP2184587.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<compra> compra { get; set; }
 
+        public static implicit operator usuario(usuario v)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

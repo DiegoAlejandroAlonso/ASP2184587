@@ -9,6 +9,7 @@ using System.Web.Security;
 //importando los modelos de base de datos
 using ASP2184587.Models;
 using Rotativa;
+using System.IO;
 
 namespace ASP2184587.Controllers
 {
@@ -197,7 +198,68 @@ namespace ASP2184587.Controllers
         }
 
 
+        public ActionResult SubirCsv()
+        {
+            return View();
+        }
 
+
+        [HttpPost]
+
+        public ActionResult SubirCsv(HttpPostedFileBase fileform) 
+        {
+
+            string filePath = string.Empty;
+
+            if (fileform != null)
+            {
+                //ruta de la carpeta que caragara el archivo
+                string path = Server.MapPath("~/Uploads/");
+
+                //verificar si la ruta de la carpeta existe
+                if (!Directory.Exists(path))
+                {
+                    Directory.CreateDirectory(path);
+                }
+
+                //obtener el nombre del archivo
+                filePath = path + Path.GetFileName(fileform.FileName);
+                //obtener la extension del archivo
+                string extension = Path.GetExtension(fileform.FileName);
+
+                //guardando el archivo
+                fileform.SaveAs(filePath);
+
+                string csvData = System.IO.File.ReadAllText(filePath);
+                foreach (string row in csvData.Split('\n'))
+                {
+                    if (!string.IsNullOrEmpty(row)) 
+                    {
+                        var newUsuario = new usuario
+                        {
+                            nombre = row.Split(';')[0],
+                            apellido = row.Split(';')[1],
+                            //fecha_nacimiento = row.Split(';')[2],
+                            email = row.Split(';')[3],
+                            password = row.Split(';')[4],
+                        };
+
+                        using (var db = new inventarioEntities1()) 
+                        {
+                            db.usuario.Add(newUsuario);
+
+                            db.SaveChanges();
+
+                        }
+
+
+                    }
+                }
+
+            }
+            return View();
+
+        }
 
     }
 }

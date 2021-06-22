@@ -1,0 +1,34 @@
+﻿
+
+
+
+
+
+
+
+
+@*<div class="card">
+    <div class="card-header">
+        Cargar archivo CSV
+    </div>
+    <div class="card-body">
+        <table class="display responsive nowrap" id="myTable" style="width:100%">
+            <thead>
+
+                @using (Html.BeginForm("SbuirCsv", "Usuario", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                {
+                    <input type="file" name="fileForm" />
+
+
+                    <input class="btn btn-danger" type="submit" value="Enviar" />
+                }
+
+            </thead>
+        </table>
+    </div>
+</div>
+
+<div>
+    <a class="btn btn-primary" href="/Usuario/Index">Volver a la lista <span class="glyphicon glyphicon-hand-left"></span></a>
+
+</div>*@
