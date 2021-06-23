@@ -1,0 +1,71 @@
+﻿@model IEnumerable<ASP2184587.Models.Reporte2>
+
+@{
+    ViewBag.Title = "Reporte2";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="card">
+    <div class="card-header">
+
+        <center>  <h1 class="titulo">Reporte</h1> </center>
+    </div>
+    <div class="card-body">
+        <table class="display responsive nowrap" id="myTable" style="width:100%">
+            <thead>
+                <table class="table">
+                    <tr>
+                        <th>Fecga Compra</th>
+                        <th>Total Compra</th>
+                        <th>Nombre Cliente</th>
+                        <th>Docuemento del Cliente</th>
+
+                    </tr>
+
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+
+
+                            <td>@Html.DisplayFor(modelItem => item.fechaCompras)</td>
+                            <td>@Html.DisplayFor(modelItem => item.totalCompras)</td>
+                            <td>@Html.DisplayFor(modelItem => item.nombreCliente)</td>
+                            <td>@Html.DisplayFor(modelItem => item.documentoCliente)</td>
+
+                        </tr>
+                    }
+                </table>
+
+
+
+
+
+
+            </thead>
+        </table>
+    </div>
+</div>
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<a class="btn btn-info" href="ImprimirReporte1">Descargar Reporte <span class="glyphicon glyphicon-save"></span></a>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/8/83/Sena_Colombia_logo.svg" alt="Alternate Text" />
+
+
+
+
+

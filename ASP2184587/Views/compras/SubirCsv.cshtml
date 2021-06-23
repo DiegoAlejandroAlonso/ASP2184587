@@ -7,7 +7,7 @@
 
 <div class="card">
     <div class="card-header">
-        Cargar archivo CSV
+        <center> Cargar archivo CSV</center>
     </div>
     <div class="card-body">
         <table class="display responsive nowrap" id="myTable" style="width:100%">
@@ -15,10 +15,10 @@
 
                 @using (Html.BeginForm("SubirCsv", "compras", FormMethod.Post, new { enctype = "multipart/form-data" }))
                 {
-                    <input type="file" name="fileForm" />
+                   <center> <input type="file" name="fileForm" /></center>
 
 
-                    <input class="btn btn-danger" type="submit" value="Enviar" />
+                   <center> <input class="btn btn-danger" type="submit" value="Enviar" /></center>
                 }
 
             </thead>

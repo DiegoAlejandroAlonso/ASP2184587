@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.EnterpriseServices;
+
 
 namespace ASP2184587.Models
 {
@@ -13,6 +15,16 @@ namespace ASP2184587.Models
 
         public String nombreProducto { get; set; }
         public int? precioProducto { get; set; }
+       
+
+
+
+
+
+
+       
+
 
     }
+
 }

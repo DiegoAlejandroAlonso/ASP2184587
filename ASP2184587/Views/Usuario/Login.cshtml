@@ -6,43 +6,42 @@
 
 
 @using (Html.BeginForm("Login", "Usuario", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post))
+
+
 {
     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
-    <div class="container">
-        <form action="/Usuario/Login" method="post">
-            @Html.AntiForgeryToken()
-            <div class="form-group">
-                <label class="control-label col-md-2">Usuario</label>
-                <div class="col-md-10">
-                    <input type="text" name="user" class="form-control" />
-                </div>
-            </div>
+    <div class="container-login">
+         <div class="wrap-login">
+             <form action="/Usuario/Login" method="post">
+                 @Html.AntiForgeryToken()
+                    <div class="form-group">
+                        <label class="control-label col-md-2">Usuario</label>
+                         <div class="col-md-10">
+                            <input type="text" name="user" class="form-control" />
+                         </div>
+                    </div>
 
-            <div class="form-group">
-                <label class="control-label col-md-2">Contraseña</label>
-                <div class="col-md-10">
-                    <input type="password" name="password" value="" class="form-control" />
-                </div>
-            </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-2">Contraseña</label>
+                        <div class="col-md-10">
+                            <input type="password" name="password" value="" class="form-control" />
+                         </div>
+                     </div>
 
-            <div class="form-group">
-                <div class="col-md-offset-2 col-md-10">
-                    <input type="submit" name="" value="Ingresar" class="btn btn-default" />
-                </div>
-            </div>
+                     <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                             <input type="submit" name="" value="Ingresar" class="btn btn-default" />
+                        </div>
+                    </div>
 
-        </form>
-    </div>
-
-    <div class="form-group">
-        <div class="col-md-offset-2 col-md-10">
-            <input type="submit" value="Login" class="btn btn-black" />
-            @Html.ActionLink("Register", "Register", "Account", new { @class = "btn btn-secondary" })
+            </form>
         </div>
     </div>
 
-}
+
+
+   }
 
 
 

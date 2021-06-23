@@ -9,50 +9,55 @@
 
         <div class="card">
             <div class="card-header">
-                <p><strong>Lista De Clientes</strong></p>
+                <center> <p><strong>Lista Clientes</strong></p></center>
             </div>
-            <div class="card-body">
-                <table class="table-bordered table-hover responsive nowrap" id="myTable" style="width:100%">
-                    <thead>
-                        <tr>
-                            <th>Nombre</th>
-                            <th>Documento</th>
-                            <th>Correo</th>
-                            <th></th>
-                        </tr>
-                    </thead>
+            <center>
+                <div class="card-body">
+                    <table class="table-bordered table-hover responsive nowrap" id="myTable" style="width:100%">
+                        <thead>
+                            <tr>
+                                <th>Nombre</th>
+                                <th>Documento</th>
+                                <th>Correo</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+
+
+                       
+
+                        @foreach (var item in Model)
+                        {
+
+                            <tr>
+
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.nombre)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.documento)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.email)
+                                </td>
+                                <td>
+
+                                    <a class="btn btn-warning" href="/cliente/Edit/@item.id">Edit <span class="glyphicon glyphicon-edit"></span></a>
+                                    <a class="btn btn-info" href="/cliente/Details/@item.id">Details <span class="glyphicon glyphicon-eye-open"></span></a>
+                                    <a class="btn btn-danger" href="/cliente/Delete/@item.id">Delete <span class="glyphicon glyphicon-trash"></span></a>
 
 
 
-
-                    @foreach (var item in Model)
-                    {
-                        <tr>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.nombre)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.documento)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.email)
-                            </td>
-                            <td>
-
-                                <a class="btn btn-warning" href="/cliente/Edit/@item.id">Edit <span class="glyphicon glyphicon-edit"></span></a>
-                                <a class="btn btn-info" href="/cliente/Details/@item.id">Details <span class="glyphicon glyphicon-eye-open"></span></a>
+                                    @Html.ActionLink("Eliminar", "Delete", new { id = item.id }, new { @class = "linkDelete" })
 
 
+                                </td>
+                            </tr>
+                        }
 
-                                @Html.ActionLink("Eliminar", "Delete", new { id = item.id }, new { @class = "linkDelete" }) 
-
-
-                            </td>
-                        </tr>
-                    }
-
-                </table>
-            </div>
+                    </table>
+                </div>
+            </center>
         </div>
 
 >
@@ -69,27 +74,4 @@
 
 
 
-        <div class="card">
-            <div class="card-header">
-                <thead>
-                    <tr>
-                        <p><strong>Crear Cliente</strong></p>
-
-                    </tr>
-                </thead>
-            </div>
-            <div class="card-body">
-                <table class="display responsive nowrap" id="myTable" style="width:50%">
-                    <thead>
-                        <tr>
-
-                            <p>
-                                <a class="btn btn-success" href="/cliente/Create">Crear Cliente <span class="glyphicon glyphicon-folder-open"></span></a>
-                            </p>
-                        </tr>
-                    </thead>
-
-                </table>
-            </div>
-        </div>
-
+     
