@@ -1,10 +1,9 @@
-﻿
-@if (Request.IsAuthenticated)
+﻿@if (Request.IsAuthenticated)
 {
     using (Html.BeginForm("LogOff", "", FormMethod.Post, new { id = "logoutForm", @class = "navbar-nav ml-auto mt-2 mt-lg-0" }))
     {
         <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
-            
+
             <li class="nav-item">
                 <button type="submit" class="btn btn-danger btn-sm">
                     <i class="fas fa-sign-out-alt"></i>
@@ -16,7 +15,7 @@
 else
 {
     <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
-        
+
         <li>@Html.ActionLink("Iniciar Sesion", "Login", "Usuario", routeValues: null, htmlAttributes: new { id = "loginLink", @class = "nav-link" })</li>
     </ul>
 }

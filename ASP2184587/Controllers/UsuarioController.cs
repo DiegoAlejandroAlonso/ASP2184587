@@ -10,6 +10,7 @@ using System.Web.Security;
 using ASP2184587.Models;
 using Rotativa;
 using System.IO;
+using System.Web.Routing;
 
 namespace ASP2184587.Controllers
 {
@@ -261,5 +262,27 @@ namespace ASP2184587.Controllers
 
         }
 
+        public ActionResult PaginadorIndex(int pagina = 1)
+        {
+            var cantidadRegistros = 5;
+            using (var db = new inventarioEntities1())
+            {
+                var usuarios = db.usuario.OrderBy(x => x.id).Skip((pagina - 1) * cantidadRegistros)
+                    .Take(cantidadRegistros).ToList();
+
+                var totalRegistros = db.usuario.Count();
+                var modelo = new UsuarioIndex();
+                modelo.Usuarios = usuarios;
+                modelo.ActualPage = pagina;
+                modelo.Total = totalRegistros;
+                modelo.RecordsPage = cantidadRegistros;
+                modelo.ValuesQueryString = new RouteValueDictionary();
+
+                return View(modelo);
+            }
+        }
+
     }
 }
+
+    
